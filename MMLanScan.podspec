@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MMLanScan'
-  s.version          = '1.0'
+  s.version          = '2.0'
   s.summary          = 'MMLanScan is an open source library for iOS that helps you scan your LAN network and shows the available devices and their MAC Address.'
 
 # This description is used to generate tags and improve search results.
@@ -35,7 +35,7 @@ Scan any subnet (not only /24)
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'MMLanScan/Classes/**/*'
+  s.source_files = 'MMLanScan/**/*'
   
   # s.resource_bundles = {
   #   'MMLanScan' => ['MMLanScan/Assets/*.png']

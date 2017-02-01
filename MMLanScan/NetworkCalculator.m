@@ -72,6 +72,7 @@
     
     //Performing bit wise OR on Wild card and IP to get the last host
     for (int i=0; i < [ipArray count]-1; i++) {
+        
         [lastIPArray addObject:[NSNumber numberWithInt:[ipArray[i] intValue] | [wildCard[i] intValue]]];
     }
     
@@ -89,11 +90,14 @@
     int ipCount = (int)[ipArr count];
     
     for (int i= ipCount-1; i > 0; i--) {
+        
         if ([ipArr[i] intValue]==0) {
+        
             ipArr[i]=[NSNumber numberWithInt:1];
             break;
         }
         else {
+            
             ipArr[i]=[NSNumber numberWithInt:0];
             if (ipArray[i-1]==0) {
                 ipArr[i-1]=[NSNumber numberWithInt:1];
@@ -102,10 +106,7 @@
         }
     }
     
-    
-    
     return [self binaryToIP:ipArr];
-    
 }
 
 //Increasing by one the IP on binary representation and returns the IP on NSArray (Binarry)
@@ -116,11 +117,14 @@
     int ipCount = (int)[ipArr count];
     
     for (int i= ipCount-1; i > 0; i--) {
+       
         if ([ipArr[i] intValue]==0) {
+        
             ipArr[i]=[NSNumber numberWithInt:1];
             break;
         }
         else {
+            
             ipArr[i]=[NSNumber numberWithInt:0];
             if (ipArray[i-1]==0) {
                 ipArr[i-1]=[NSNumber numberWithInt:1];
@@ -128,8 +132,6 @@
             }
         }
     }
-    
-    
     
     return ipArr;
 }
@@ -146,6 +148,7 @@
     for (NSString *sub in ipArray) {
         
         int part = [sub intValue];
+        
         if (part<0 || part>255) {
             return NO;
         }
@@ -156,6 +159,7 @@
 
 //This function convert decimals to binary
 +(NSString *)print01:(int)int11{
+    
     int n =128;
     char array12[8];
     NSString *str;
@@ -163,7 +167,7 @@
     if(int11==0)
         return str= [NSString stringWithFormat:@"00000000"];
     
-    for(int j=0;j<8;j++){
+    for(int j=0;j<8;j++) {
         if ((int11-n)>=0){
             array12[j]='1';
             int11-=n;
@@ -198,24 +202,25 @@
     t3= [self print01:int3];
     t4= [self print01:int4];
     
-    // NSArray *binaryArray = [[NSArray alloc]initWithObjects:t1,t2,t3,t4, nil];
-    
     NSMutableArray *ipBinary = [[NSMutableArray alloc]initWithCapacity:32];
     
-    for(int i=0;i<=7;i++)
-    {
+    for(int i=0;i<=7;i++) {
+        
         [ipBinary addObject:[NSNumber numberWithInt:[t1 characterAtIndex:i]- '0']];
     }
-    for(int i=0;i<=7;i++)
-    {
+    
+    for(int i=0;i<=7;i++) {
+        
         [ipBinary addObject:[NSNumber numberWithInt:[t2 characterAtIndex:i]- '0']];
     }
-    for(int i=0;i<=7;i++)
-    {
+    
+    for(int i=0;i<=7;i++) {
+        
         [ipBinary addObject:[NSNumber numberWithInt:[t3 characterAtIndex:i]- '0']];
     }
-    for(int i=0;i<=7;i++)
-    {
+    
+    for(int i=0;i<=7;i++) {
+        
         [ipBinary addObject:[NSNumber numberWithInt:[t4 characterAtIndex:i]- '0']];
     }
     
@@ -248,12 +253,13 @@
     
 }
 
-//Check if the binary ip is equal with another binary IP
+//Check if the binary IP is equal with another binary IP
 +(BOOL)isEqualBinary:(NSArray*)binArray1 :(NSArray*)binArray2{
     
     for (int i=0; i < [binArray1 count]; i++) {
         
         if ([binArray1[i] intValue]!= [binArray2[i] intValue]) {
+            
             return NO;
         }
     }
@@ -269,10 +275,13 @@
     for(int i=0; i < [subArray count]; i++) {
         
         int intNum = [[subArray objectAtIndex:i] intValue];
+        
         if (intNum==0) {
+            
             [subArray replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:1]];
         }
         else {
+            
             [subArray replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:0]];
         }
     }
