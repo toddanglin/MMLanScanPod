@@ -53,11 +53,7 @@
 
 #import <Foundation/Foundation.h>
 
-#if TARGET_OS_EMBEDDED || TARGET_IPHONE_SIMULATOR
-    #import <CFNetwork/CFNetwork.h>
-#else
-    #import <CoreServices/CoreServices.h>
-#endif
+#import <CoreServices/CoreServices.h>
 
 #include <AssertMacros.h>
 
