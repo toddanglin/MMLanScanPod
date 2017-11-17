@@ -7,7 +7,7 @@
 //
 
 #import "PingOperation.h"
-#import "MMDevice.h"
+#import "Device.h"
 #import "LANProperties.h"
 #import "MacFinder.h"
 
